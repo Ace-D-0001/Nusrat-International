@@ -1,0 +1,376 @@
+/* ===========================
+   common.css — Global Base
+   =========================== */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #1a56db;
+  --blue-dark: #1140a6;
+  --gold: #c9a227;
+  --gold-dark: #a07b0e;
+  --green: #0d9f6e;
+  --green-dark: #077a53;
+  --dark: #0d1117;
+  --text: #1a1f2e;
+  --text-muted: #6b7280;
+  --bg: #f5f7fa;
+  --white: #ffffff;
+  --radius: 16px;
+  --shadow: 0 8px 30px rgba(0,0,0,0.10);
+  --shadow-hover: 0 20px 50px rgba(0,0,0,0.18);
+  --transition: 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===========================
+   NAVBAR
+   =========================== */
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: var(--transition);
+  background: transparent;
+  padding: 0;
+}
+
+#navbar.scrolled {
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  backdrop-filter: blur(10px);
+}
+
+#navbar.scrolled .logo,
+#navbar.scrolled .nav-links a {
+  color: var(--text);
+}
+
+#navbar.scrolled .logo span {
+  color: var(--blue);
+}
+
+#navbar.scrolled .nav-links a:hover {
+  color: var(--blue);
+}
+
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 18px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* ---- NAVBAR Logo with image ---- */
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo a img {
+  height: 42px;
+  width: 42px;
+  
+  object-fit: cover;
+}
+
+.logo a span {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 0.01em;
+  transition: var(--transition);
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: white;
+  border-bottom-color: #f8c640;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 1100;
+  position: relative;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+#navbar.scrolled .hamburger span {
+  background: var(--text);
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ===========================
+   FOOTER
+   =========================== */
+
+footer {
+  background: var(--dark);
+  color: #9ca3af;
+  padding: 60px 0 0;
+  margin-top: 0;
+}
+
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px 50px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 50px;
+}
+
+.footer-brand .logo {
+  color: white;
+  margin-bottom: 16px;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 280px;
+  color: #6b7280;
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.social-links a {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #9ca3af;
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: white;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  font-size: 14px;
+  color: #6b7280;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: white;
+  padding-left: 6px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #1f2937;
+  text-align: center;
+  padding: 20px 40px;
+  font-size: 13px;
+  color: #4b5563;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media (max-width: 1024px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: flex;
+    position: relative;
+    z-index: 1200; /* always on top */
+  }
+
+  .nav-inner {
+    padding: 16px 20px;
+  }
+
+  /* ---- TOP DROPDOWN MENU ---- */
+  .nav-links {
+    /* Positioned just below the navbar, slides down from top */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    /* Clean white background — no dark confusion */
+    background: #ffffff;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    padding-top: 68px; /* height of navbar bar */
+    padding-bottom: 12px;
+
+    /* Hidden: clipped above viewport */
+    transform: translateY(-100%);
+    transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Keep links tappable only when open */
+    visibility: hidden;
+
+    z-index: 1100;
+    overflow: hidden;
+  }
+
+  .nav-links.open {
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  /* Individual list items — stagger in from above */
+  .nav-links li {
+    width: 100%;
+    border-bottom: 1px solid #f0f0f0;
+    opacity: 0;
+    transform: translateY(-12px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .nav-links li:first-child {
+    border-top: 1px solid #f0f0f0;
+  }
+
+  /* JS adds .revealed to trigger each item */
+  .nav-links li.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 16px 28px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text); /* dark text on white — readable */
+    border-bottom: none;
+    letter-spacing: 0.01em;
+    transition: color 0.2s ease, background 0.2s ease, padding-left 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--blue);
+    background: #f0f5ff;
+    padding-left: 38px;
+    border-bottom: none;
+  }
+
+  .nav-links a.active {
+    color: var(--blue);
+    font-weight: 600;
+    border-bottom: none;
+    background: #f0f5ff;
+  }
+
+  /* Lock body scroll when menu open */
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  /* Hamburger icon turns dark when menu is open (white bg behind it) */
+  .hamburger.open span {
+    background: var(--text);
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

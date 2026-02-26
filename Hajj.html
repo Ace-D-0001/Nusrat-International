@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hajj & Umrah Packages — Nusrat International</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Hajj.css">
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="cards.css">
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="Hajj.css">
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="logo">
+      <a href="index.html">
+        <img src="https://image2url.com/r2/default/images/1771964863151-2518979a-0fe0-4990-9a1a-9175b88e5ac8.jpg" alt="Logo" onerror="this.style.display='none'">
+        <span>Nusrat International</span>
+      </a>
+    </div>
+     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" >Home | হোম</a></li>
+      <li><a href="Travel.html" >Travel | ভ্রমণ</a></li>
+      <li><a href="Hajj.html"class="active">Hajj | হাজ্জ</a></li>
+      <li><a href="Work.html">Work | কাজ</a></li>
+      <li><a href="Contact.html">Contact | যোগাযোগ</a></li>
+      <li><a href="About.html">About | আমাদের সম্পর্কে</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero hajj-hero">
+  <div class="hero-badge">☪ SACRED JOURNEY</div>
+  <h1>Hajj &amp; Umrah<br><em>Packages</em></h1>
+  <p>পবিত্র হজ ও উমরাহ প্যাকেজ — Journey to the house of Allah with complete peace of mind.</p>
+  <div class="hero-stats">
+    <div class="h-stat"><span>10,000+</span><small>Pilgrims Served</small></div>
+    <div class="h-stat"><span>15+</span><small>Years Experience</small></div>
+    <div class="h-stat"><span>100%</span><small>Visa Success</small></div>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="switchTab(this,'all')">All Packages</button>
+  <button class="tab-btn" onclick="switchTab(this,'hajj')">Hajj | হজ</button>
+  <button class="tab-btn" onclick="switchTab(this,'umrah')">Umrah | উমরাহ</button>
+  <button class="tab-btn" onclick="switchTab(this,'budget')">Budget</button>
+  <button class="tab-btn" onclick="switchTab(this,'premium')">Premium</button>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="filter-left">
+    <span class="filter-label">Sort:</span>
+    <select class="sort-select" onchange="sortCards(this)">
+      <option value="default">Default</option>
+      <option value="price-low">Price: Low to High</option>
+      <option value="price-high">Price: High to Low</option>
+      <option value="rating">Top Rated</option>
+    </select>
+  </div>
+  <span class="results-count" id="resultsCount">9 packages</span>
+</div>
+
+<!-- GRID -->
+<main>
+  <div class="container" id="packagesGrid">
+
+    <div class="pkg-card hajj-card" data-category="hajj budget" data-price="2999" data-rating="4.8">
+      <div class="pkg-img-wrap">
+        <img src="https://picsum.photos/id/1037/500/350" alt="Standard Hajj">
+        <div class="pkg-price gold">$2,999</div>
+        <div class="pkg-duration">21 Days</div>
+        <div class="hajj-badge">🕋 Hajj</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top"><div><h3>Standard Hajj Package</h3><h4>স্ট্যান্ডার্ড হজ প্যাকেজ</h4></div><span class="rating">★ 4.8</span></div>
+        <div class="hajj-includes"><span>✈ Flights</span><span>🏨 3-Star</span><span>🚌 Transport</span><span>🍽 Meals</span></div>
+        <p class="pkg-desc">Complete 21-day Hajj with 3-star accommodation in Makkah &amp; Madinah.</p>
+        <p class="pkg-desc bn">মক্কা ও মদিনায় ৩-তারকা আবাসনসহ সম্পূর্ণ হজ।</p>
+        <button class="view-btn gold">View Details | বিস্তারিত দেখুন</button>
+      </div>
+    </div>
+
+    <div class="pkg-card hajj-card" data-category="hajj premium" data-price="4499" data-rating="5.0">
+      <div class="pkg-img-wrap">
+        <img src="https://picsum.photos/id/1039/500/350" alt="Premium Hajj">
+        <div class="pkg-price gold">$4,499</div>
+        <div class="pkg-duration">25 Days</div>
+        <div class="hajj-badge">🕋 Hajj</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top"><div><h3>Premium Hajj Package</h3><h4>প্রিমিয়াম হজ প্যাকেজ</h4></div><span class="rating">★ 5.0</span></div>
+        <div class="hajj-includes"><span>✈ Business Class</span><span>🏨 5-Star</span><span>🚌 VIP Transport</span><span>🍽 Full Board</span></div>
+        <p class="pkg-desc">Luxury 5-star accommodation steps from Haram with VIP group services.</p>
+        <p class="pkg-desc bn">হারামের নিকটে ৫-তারকা হোটেলে বিলাসবহুল থাকার ব্যবস্থা।</p>
+        <button class="view-btn gold">View Details | বিস্তারিত দেখুন</button>
+      </div>
+    </div>
+
+    <div class="pkg-card hajj-card" data-category="hajj budget" data-price="3499" data-rating="4.7">
+      <div class="pkg-img-wrap">
+        <img src="https://picsum.photos/id/1035/500/350" alt="Economy Hajj">
+        <div class="pkg-price gold">$3,499</div>
+        <div class="pkg-duration">21 Days</div>
+        <div class="hajj-badge">🕋 Hajj</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top"><div><h3>Economy Hajj Package</h3><h4>ইকোনমি হজ প্যাকেজ</h4></div><span class="rating">★ 4.7</span></div>
+        <div class="hajj-includes"><span>✈ Flights</span><span>🏨 4-Star</span><span>🚌 Transport</span><span>🍽 Meals</span></div>
+        <p class="pkg-desc">21-day Hajj with 4-star accommodation, ideal for families and groups.</p>
+        <p class="pkg-desc bn">পরিবার ও দলের জন্য ৪-তারকা হোটেলসহ ২১ দিনের হজ।</p>
+        <button class="view-btn gold">View Details | বিস্তারিত দেখুন</button>
+      </div>
+    </div>
+
+    <div class="pkg-card hajj-card" data-category="umrah budget" data-price="1599" data-rating="4.9">
+      <div class="pkg-img-wrap">
+        <img src="https://picsum.photos/id/1040/500/350" alt="Umrah Standard">
+        <div class="pkg-price gold">$1,599</div>
+        <div class="pkg-duration">14 Days</div>
+        <div class="hajj-badge umrah">🤲 Umrah</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top"><div><h3>Standard Umrah Package</h3><h4>স্ট্যান্ডার্ড উমরাহ প্যাকেজ</h4></div><span class="rating">★ 4.9</span></div>
+        <div class="hajj-includes"><span>✈ Flights</span><span>🏨 3-Star</span><span>🚌 Transport</span><span>🗺 Guide</span></div>
+        <p class="pkg-desc">14-day Umrah with guided tours of Makkah, Madinah and historic sites.</p>
+        <p class="pkg-desc bn">মক্কা, মদিনা ও ঐতিহাসিক স্থানসমূহের গাইডেড ভ্রমণ।</p>
+        <button class="view-btn gold">View Details | বিস্তারিত দেখুন</button>
+      </div>
+    </div>
+
+    <div class="pkg-card hajj-card" data-category="umrah premium" data-price="2499" data-rating="5.0">
+      <div class="pkg-img-wrap">
+        <img src="https://picsum.photos/id/1036/500/350" alt="Premium Umrah">
+        <div class="pkg-price gold">$2,499</div>
+        <div class="pkg-duration">15 Days</div>
+        <div class="hajj-badge umrah">🤲 Umrah</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top"><div><h3>Premium Umrah Package</h3><h4>প্রিমিয়াম উমরাহ প্যাকেজ</h4></div><span class="rating">★ 5.0</span></div>
+        <div class="hajj-includes"><span>✈ Business Class</span><span>🏨 5-Star</span><span>🚗 Private Car</span><span>🗺 Scholar Guide</span></div>
+        <p class="pkg-desc">15-day Premium Umrah with 5-star hotels, private transport and scholar guide.</p>
+        <p class="pkg-desc bn">৫-তারকা হোটেল, ব্যক্তিগত পরিবহন ও আলেম গাইডসহ উমরাহ।</p>
+        <button class="view-btn gold">View Details | বিস্তারিত দেখুন</button>
+      </div>
+    </div>
+
+    <div class="pkg-card hajj-card" data-category="umrah budget" data-price="999" data-rating="4.5">
+      <div class="pkg-img-wrap">
+        <img src="https://picsum.photos/id/1057/500/350" alt="Ramadan Umrah">
+        <div class="pkg-price gold">$999</div>
+        <div class="pkg-duration">7 Days</div>
+        <div class="hajj-badge umrah">🤲 Umrah</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top"><div><h3>Ramadan Umrah Package</h3><h4>রমাদান উমরাহ প্যাকেজ</h4></div><span class="rating">★ 4.5</span></div>
+        <div class="hajj-includes"><span>✈ Flights</span><span>🏨 Hotel</span><span>🌙 Ramadan Special</span></div>
+        <p class="pkg-desc">Perform Umrah in the blessed month of Ramadan — a special spiritual experience.</p>
+        <p class="pkg-desc bn">পবিত্র রমাদান মাসে উমরাহ — এক অপূর্ব আধ্যাত্মিক অভিজ্ঞতা।</p>
+        <button class="view-btn gold">View Details | বিস্তারিত দেখুন</button>
+      </div>
+    </div>
+
+    <div class="pkg-card hajj-card" data-category="hajj premium" data-price="5999" data-rating="5.0">
+      <div class="pkg-img-wrap">
+        <img src="https://picsum.photos/id/1062/500/350" alt="VIP Hajj">
+        <div class="pkg-price gold">$5,999</div>
+        <div class="pkg-duration">30 Days</div>
+        <div class="hajj-badge">🕋 Hajj</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top"><div><h3>VIP Hajj Package</h3><h4>ভিআইপি হজ প্যাকেজ</h4></div><span class="rating">★ 5.0</span></div>
+        <div class="hajj-includes"><span>✈ Business Class</span><span>🏨 Royal Suite</span><span>🚗 Private Convoy</span><span>👨‍💼 Concierge</span></div>
+        <p class="pkg-desc">The ultimate VIP Hajj — royal suite hotels, private convoy and concierge service.</p>
+        <p class="pkg-desc bn">সর্বোচ্চ বিলাসবহুল হজ — রয়্যাল স্যুট ও ব্যক্তিগত কনসিয়ার্জ সেবা।</p>
+        <button class="view-btn gold">View Details | বিস্তারিত দেখুন</button>
+      </div>
+    </div>
+
+    <div class="pkg-card hajj-card" data-category="umrah premium" data-price="1899" data-rating="4.8">
+      <div class="pkg-img-wrap">
+        <img src="https://picsum.photos/id/1069/500/350" alt="Family Umrah">
+        <div class="pkg-price gold">$1,899</div>
+        <div class="pkg-duration">12 Days</div>
+        <div class="hajj-badge umrah">🤲 Umrah</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top"><div><h3>Family Umrah Package</h3><h4>পারিবারিক উমরাহ প্যাকেজ</h4></div><span class="rating">★ 4.8</span></div>
+        <div class="hajj-includes"><span>✈ Flights</span><span>🏨 4-Star Family Rooms</span><span>👨‍👩‍👧 Family Guide</span><span>🍽 All Meals</span></div>
+        <p class="pkg-desc">Specially designed for families with comfortable rooms and full guidance.</p>
+        <p class="pkg-desc bn">পরিবারের জন্য বিশেষভাবে ডিজাইন — আরামদায়ক কক্ষ ও পরিপূর্ণ গাইডেন্স।</p>
+        <button class="view-btn gold">View Details | বিস্তারিত দেখুন</button>
+      </div>
+    </div>
+
+    <div class="pkg-card hajj-card" data-category="umrah budget" data-price="1299" data-rating="4.6">
+      <div class="pkg-img-wrap">
+        <img src="https://picsum.photos/id/1047/500/350" alt="Economy Umrah">
+        <div class="pkg-price gold">$1,299</div>
+        <div class="pkg-duration">10 Days</div>
+        <div class="hajj-badge umrah">🤲 Umrah</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top"><div><h3>Economy Umrah Package</h3><h4>ইকোনমি উমরাহ প্যাকেজ</h4></div><span class="rating">★ 4.6</span></div>
+        <div class="hajj-includes"><span>✈ Flights</span><span>🏨 3-Star</span><span>🚌 Group Transport</span></div>
+        <p class="pkg-desc">Budget-friendly 10-day Umrah for individuals and small groups.</p>
+        <p class="pkg-desc bn">ব্যক্তি ও ছোট দলের জন্য সাশ্রয়ী ১০ দিনের উমরাহ।</p>
+        <button class="view-btn gold">View Details | বিস্তারিত দেখুন</button>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- JOURNEY STEPS -->
+<section class="journey-steps">
+  <div class="steps-inner">
+    <div class="steps-heading">
+      <span class="section-tag-gold">✦ HOW IT WORKS</span>
+      <h2>Your Path to<br><em>The Sacred Journey</em></h2>
+      <p>আমরা আপনার পবিত্র সফরকে সহজ ও নিরাপদ করে তুলি — step by step.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-item"><div class="step-num">01</div><h4>Choose Your Package</h4><p>Browse our Hajj or Umrah packages and pick the one that fits your needs and budget.</p></div>
+      <div class="step-connector">→</div>
+      <div class="step-item"><div class="step-num">02</div><h4>Submit Documents</h4><p>Provide passport, NID, photos and medical certificate. We handle all paperwork from here.</p></div>
+      <div class="step-connector">→</div>
+      <div class="step-item"><div class="step-num">03</div><h4>Visa &amp; Flights</h4><p>We process your Saudi visa and book your flights. 100% visa success rate guaranteed.</p></div>
+      <div class="step-connector">→</div>
+      <div class="step-item"><div class="step-num">04</div><h4>Depart &amp; Worship</h4><p>Travel with our guided group, stay in your pre-booked hotel, and focus on your ibadah.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <span class="section-tag">📞 GET IN TOUCH</span>
+      <h2>Contact Us<br><span class="bn-sub">আমাদের সাথে যোগাযোগ করুন</span></h2>
+      <p>Have questions about Hajj or Umrah? Our religious travel specialists are here to help.</p>
+      <div class="contact-items">
+        <div class="contact-item"><span class="ci-icon">📍</span><div><strong>Address</strong><p>Banani Super Market, Dhaka, Bangladesh</p></div></div>
+        <div class="contact-item"><span class="ci-icon">📞</span><div><strong>Phone</strong><p>+880 1712-345678</p></div></div>
+        <div class="contact-item"><span class="ci-icon">✉️</span><div><strong>Email</strong><p>hajj@nusratinternational.com</p></div></div>
+        <div class="contact-item"><span class="ci-icon">🕐</span><div><strong>Hours</strong><p>Sat–Thu: 9AM – 9PM</p></div></div>
+      </div>
+    </div>
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <h3>Book Your Package | প্যাকেজ বুক করুন</h3>
+      <div class="form-row">
+        <div class="form-group"><label>Full Name</label><input type="text" placeholder="Your full name" required></div>
+        <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+880 XXXXXXXXX" required></div>
+      </div>
+      <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com" required></div>
+      <div class="form-group">
+        <label>Package Type</label>
+        <select>
+          <option value="">Select package type...</option>
+          <option>Standard Hajj</option><option>Economy Hajj</option>
+          <option>Premium Hajj</option><option>VIP Hajj</option>
+          <option>Standard Umrah</option><option>Premium Umrah</option>
+          <option>Ramadan Umrah</option><option>Family Umrah</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Number of Pilgrims</label><input type="number" min="1" placeholder="e.g. 2" required></div>
+      <div class="form-group"><label>Your Message</label><textarea rows="3" placeholder="Any special requirements..."></textarea></div>
+      <button type="submit" class="btn-submit" style="background:linear-gradient(135deg,#c9a227,#a07b0e);">Book Now | এখনই বুক করুন ☪</button>
+      <div class="form-success" id="formSuccess">✅ Booking request sent! We'll contact you shortly. جزاك الله خيراً</div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div style="margin-bottom:12px;">
+        <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+          <img src="https://image2url.com/r2/default/images/1771964863151-2518979a-0fe0-4990-9a1a-9175b88e5ac8.jpg" alt="Logo" style="height:36px;width:36px;border-radius:8px;object-fit:cover;" onerror="this.style.display='none'">
+          <span style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:white;">Nusrat International</span>
+        </a>
+      </div>
+      <p>Your trusted partner for Hajj, Umrah, travel & work. Serving Bangladesh since 2010.</p>
+      <div class="social-links"><a href="#">FB</a><a href="#">YT</a><a href="#">IG</a><a href="#">WA</a></div>
+    </div>
+    <div class="footer-links"><h4>Services</h4><a href="Travel.html">Travel Packages</a><a href="Hajj.html">Hajj Packages</a><a href="Hajj.html">Umrah Packages</a><a href="Work.html">Work Visas</a></div>
+    <div class="footer-links"><h4>Company</h4><a href="#">About Us</a><a href="#">Our Team</a><a href="#">Testimonials</a><a href="#contact">Contact</a></div>
+    <div class="footer-links">
+      <h4>Our Location</h4>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.7194346099836!2d90.4049653103119!3d23.79300323072133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c70e90bb671d%3A0x7eab77d0896252c0!2sBanani%20Super%20Market!5e0!3m2!1sen!2sbd!4v1771968108612!5m2!1sen!2sbd" width="100%" height="200" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Nusrat International Bangladesh. All rights reserved. | سبحان الله | সর্বস্বত্ব সংরক্ষিত।</p></div>
+</footer>
+
+<script>
+
+// ---- NAVBAR scroll effect ----
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ---- HAMBURGER MENU (top dropdown) ----
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+const navItems = navLinks.querySelectorAll('li');
+
+function openMenu() {
+  hamburger.classList.add('open');
+  navLinks.classList.add('open');
+  document.body.classList.add('menu-open');
+  // Stagger each item sliding down
+  navItems.forEach((item, i) => {
+    item.style.transitionDelay = `${0.06 + i * 0.07}s`;
+    // tiny delay to let the overlay start first
+    setTimeout(() => item.classList.add('revealed'), 20);
+  });
+}
+
+function closeMenu() {
+  hamburger.classList.remove('open');
+  navLinks.classList.remove('open');
+  document.body.classList.remove('menu-open');
+  navItems.forEach(item => {
+    item.classList.remove('revealed');
+    item.style.transitionDelay = '0s';
+  });
+}
+
+hamburger.addEventListener('click', (e) => {
+  e.stopPropagation();
+  hamburger.classList.contains('open') ? closeMenu() : openMenu();
+});
+
+// Close when a nav link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', closeMenu);
+});
+
+// Close when clicking outside
+document.addEventListener('click', (e) => {
+  if (navLinks.classList.contains('open') &&
+      !navLinks.contains(e.target) &&
+      !hamburger.contains(e.target)) {
+    closeMenu();
+  }
+});
+function switchTab(btn, category) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const cards = document.querySelectorAll('#packagesGrid .pkg-card');
+  let visible = 0;
+  cards.forEach(card => {
+    const show = category === 'all' || (card.dataset.category||'').includes(category);
+    card.style.display = show ? '' : 'none';
+    if (show) visible++;
+  });
+  document.getElementById('resultsCount').textContent = visible + ' packages';
+}
+function sortCards(select) {
+  const grid = document.getElementById('packagesGrid');
+  const cards = Array.from(grid.querySelectorAll('.pkg-card'));
+  cards.sort((a,b) => {
+    if (select.value==='price-low') return a.dataset.price-b.dataset.price;
+    if (select.value==='price-high') return b.dataset.price-a.dataset.price;
+    if (select.value==='rating') return b.dataset.rating-a.dataset.rating;
+    return 0;
+  });
+  cards.forEach(c => grid.appendChild(c));
+}
+function handleSubmit(e) {
+  e.preventDefault();
+  const s = document.getElementById('formSuccess');
+  s.style.display='block';
+  e.target.reset();
+  setTimeout(() => s.style.display='none', 6000);
+}
+</script>
+</body>
+</html>

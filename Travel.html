@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Travel Packages — Nusrat International</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="Travel.css">
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="cards.css">
+  <link rel="stylesheet" href="contact.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav id="navbar">
+  <div class="nav-inner">
+
+    <div class="logo">
+      <a href="index.html">
+        <img src="https://image2url.com/r2/default/images/1771964863151-2518979a-0fe0-4990-9a1a-9175b88e5ac8.jpg"
+             alt="Nusrat International Logo"
+             onerror="this.style.display='none'">
+        <span>Nusrat International</span>
+      </a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" >Home | হোম</a></li>
+      <li><a href="Travel.html" class="active">Travel | ভ্রমণ</a></li>
+      <li><a href="Hajj.html">Hajj | হাজ্জ</a></li>
+      <li><a href="Work.html">Work | কাজ</a></li>
+      <li><a href="Contact.html">Contact | যোগাযোগ</a></li>
+      <li><a href="About.html">About | আমাদের সম্পর্কে</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================= PAGE HERO ================= -->
+<div class="page-hero">
+  <span class="section-tag">✈ EXPLORE THE WORLD</span>
+  <h1>All Traveling<br><em>Packages</em></h1>
+  <p>সকল ট্র্যাভেল প্যাকেজ — Discover your perfect destination from our full collection.</p>
+</div>
+
+<!-- ================= FILTER BAR ================= -->
+<div class="filter-bar">
+  <div class="filter-left">
+    <span class="filter-label">Filter:</span>
+    <button class="filter-btn active" onclick="filterCards(this, 'all')">All</button>
+    <button class="filter-btn" onclick="filterCards(this, 'budget')">Budget</button>
+    <button class="filter-btn" onclick="filterCards(this, 'premium')">Premium</button>
+    <button class="filter-btn" onclick="filterCards(this, 'beach')">Beach</button>
+    <button class="filter-btn" onclick="filterCards(this, 'mountain')">Mountain</button>
+    <button class="filter-btn" onclick="filterCards(this, 'city')">City</button>
+  </div>
+  <div class="filter-right">
+    <select class="sort-select" onchange="sortCards(this)">
+      <option value="default">Sort by: Default</option>
+      <option value="price-low">Price: Low to High</option>
+      <option value="price-high">Price: High to Low</option>
+      <option value="rating">Top Rated</option>
+    </select>
+    <span class="results-count" id="resultsCount">12 packages</span>
+  </div>
+</div>
+
+<!-- ================= PACKAGES GRID ================= -->
+<main>
+  <div class="container" id="packagesGrid">
+
+    <div class="pkg-card" data-category="beach" data-price="799" data-rating="4.8">
+      <div class="pkg-img-wrap">
+        <img src="https://picsum.photos/id/1018/500/350" alt="Greece">
+        <div class="pkg-price">$799</div>
+        <div class="pkg-duration">7 Days</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top">
+          <div><h3>Santorini, Greece</h3><h4>সান্তোরিনি, গ্রীস</h4></div>
+          <span class="rating">★ 4.8</span>
+        </div>
+        <p class="pkg-desc">Whitewashed houses and magical sunsets over the Aegean Sea.</p>
+        <p class="pkg-desc bn">সাদা রঙের বাড়ি ও এজিয়ান সাগরের মনোমুগ্ধকর সূর্যাস্ত।</p>
+        <button class="view-btn">View Details | বিস্তারিত দেখুন</button>
+      </div>
+    </div>
+
+    <div class="pkg-card" data-category="beach" data-price="999" data-rating="4.9">
+      <div class="pkg-img-wrap">
+        <img src="https://picsum.photos/id/1015/500/350" alt="Maldives">
+        <div class="pkg-price">$999</div>
+        <div class="pkg-duration">10 Days</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top">
+          <div><h3>Maldives</h3><h4>মালদ্বীপ</h4></div>
+          <span class="rating">★ 4.9</span>
+        </div>
+        <p class="pkg-desc">Crystal clear water and luxury overwater villas await you.</p>
+        <p class="pkg-desc bn">স্বচ্ছ জল ও বিলাসবহুল ওভারওয়াটার ভিলা।</p>
+        <button class="view-btn">View Details | বিস্তারিত দেখুন</button>
+      </div>
+    </div>
+
+    <div class="pkg-card" data-category="city premium" data-price="899" data-rating="4.7">
+      <div class="pkg-img-wrap">
+        <img src="https://picsum.photos/id/1019/500/350" alt="Dubai">
+        <div class="pkg-price">$899</div>
+        <div class="pkg-duration">6 Days</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top">
+          <div><h3>Dubai, UAE</h3><h4>দুবাই, সংযুক্ত আরব আমিরাত</h4></div>
+          <span class="rating">★ 4.7</span>
+        </div>
+        <p class="pkg-desc">Modern architecture and world-class luxury experiences.</p>
+        <p class="pkg-desc bn">আধুনিক স্থাপত্য ও বিশ্বমানের বিলাসবহুল অভিজ্ঞতা।</p>
+        <button class="view-btn">View Details | বিস্তারিত দেখুন</button>
+      </div>
+    </div>
+
+    <div class="pkg-card" data-category="mountain premium" data-price="1299" data-rating="5.0">
+      <div class="pkg-img-wrap">
+        <img src="https://picsum.photos/id/1057/500/350" alt="Switzerland">
+        <div class="pkg-price">$1,299</div>
+        <div class="pkg-duration">8 Days</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top">
+          <div><h3>Switzerland</h3><h4>সুইজারল্যান্ড</h4></div>
+          <span class="rating">★ 5.0</span>
+        </div>
+        <p class="pkg-desc">Snow-capped peaks and serene alpine valleys to explore.</p>
+        <p class="pkg-desc bn">তুষারাবৃত পর্বত ও শান্ত আল্পাইন উপত্যকা।</p>
+        <button class="view-btn">View Details | বিস্তারিত দেখুন</button>
+      </div>
+    </div>
+
+    <div class="pkg-card" data-category="city premium" data-price="1199" data-rating="4.9">
+      <div class="pkg-img-wrap">
+        <img src="https://picsum.photos/id/1040/500/350" alt="Japan">
+        <div class="pkg-price">$1,199</div>
+        <div class="pkg-duration">9 Days</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top">
+          <div><h3>Tokyo, Japan</h3><h4>টোকিও, জাপান</h4></div>
+          <span class="rating">★ 4.9</span>
+        </div>
+        <p class="pkg-desc">Ancient traditions blend with futuristic cityscapes.</p>
+        <p class="pkg-desc bn">প্রাচীন ঐতিহ্য ও আধুনিক নগরজীবনের অপূর্ব মিলন।</p>
+        <button class="view-btn">View Details | বিস্তারিত দেখুন</button>
+      </div>
+    </div>
+
+    <div class="pkg-card" data-category="mountain budget" data-price="649" data-rating="4.6">
+      <div class="pkg-img-wrap">
+        <img src="https://picsum.photos/id/1047/500/350" alt="Nepal">
+        <div class="pkg-price">$649</div>
+        <div class="pkg-duration">8 Days</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top">
+          <div><h3>Nepal Himalaya</h3><h4>নেপাল হিমালয়</h4></div>
+          <span class="rating">★ 4.6</span>
+        </div>
+        <p class="pkg-desc">Trekking through the world's highest peaks and monasteries.</p>
+        <p class="pkg-desc bn">বিশ্বের সর্বোচ্চ পর্বতচূড়ায় ট্রেকিং অভিযান।</p>
+        <button class="view-btn">View Details | বিস্তারিত দেখুন</button>
+      </div>
+    </div>
+
+    <div class="pkg-card" data-category="beach budget" data-price="549" data-rating="4.5">
+      <div class="pkg-img-wrap">
+        <img src="https://picsum.photos/id/1062/500/350" alt="Thailand">
+        <div class="pkg-price">$549</div>
+        <div class="pkg-duration">7 Days</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top">
+          <div><h3>Phuket, Thailand</h3><h4>ফুকেট, থাইল্যান্ড</h4></div>
+          <span class="rating">★ 4.5</span>
+        </div>
+        <p class="pkg-desc">Tropical beaches, vibrant nightlife and authentic Thai cuisine.</p>
+        <p class="pkg-desc bn">ক্রান্তীয় সমুদ্র সৈকত ও থাই রন্ধনশৈলীর অসাধারণ অভিজ্ঞতা।</p>
+        <button class="view-btn">View Details | বিস্তারিত দেখুন</button>
+      </div>
+    </div>
+
+    <div class="pkg-card" data-category="city" data-price="749" data-rating="4.7">
+      <div class="pkg-img-wrap">
+        <img src="https://picsum.photos/id/1071/500/350" alt="Singapore">
+        <div class="pkg-price">$749</div>
+        <div class="pkg-duration">5 Days</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top">
+          <div><h3>Singapore</h3><h4>সিঙ্গাপুর</h4></div>
+          <span class="rating">★ 4.7</span>
+        </div>
+        <p class="pkg-desc">The city of tomorrow — Gardens by the Bay and Marina Sands.</p>
+        <p class="pkg-desc bn">আগামীর শহর — গার্ডেনস বাই দ্য বে ও মেরিনা স্যান্ডস।</p>
+        <button class="view-btn">View Details | বিস্তারিত দেখুন</button>
+      </div>
+    </div>
+
+    <div class="pkg-card" data-category="city premium" data-price="1099" data-rating="4.8">
+      <div class="pkg-img-wrap">
+        <img src="https://picsum.photos/id/1069/500/350" alt="Paris">
+        <div class="pkg-price">$1,099</div>
+        <div class="pkg-duration">7 Days</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top">
+          <div><h3>Paris, France</h3><h4>প্যারিস, ফ্রান্স</h4></div>
+          <span class="rating">★ 4.8</span>
+        </div>
+        <p class="pkg-desc">The city of lights, fashion, art and the iconic Eiffel Tower.</p>
+        <p class="pkg-desc bn">আলোর শহর — আইফেল টাওয়ার ও বিশ্বমানের শিল্পকলা।</p>
+        <button class="view-btn">View Details | বিস্তারিত দেখুন</button>
+      </div>
+    </div>
+
+    <div class="pkg-card" data-category="beach budget" data-price="459" data-rating="4.4">
+      <div class="pkg-img-wrap">
+        <img src="https://picsum.photos/id/1039/500/350" alt="Cox's Bazar">
+        <div class="pkg-price">$459</div>
+        <div class="pkg-duration">4 Days</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top">
+          <div><h3>Cox's Bazar</h3><h4>কক্সবাজার</h4></div>
+          <span class="rating">★ 4.4</span>
+        </div>
+        <p class="pkg-desc">The world's longest sea beach right here in Bangladesh.</p>
+        <p class="pkg-desc bn">বিশ্বের দীর্ঘতম সমুদ্র সৈকত, আমাদের বাংলাদেশে।</p>
+        <button class="view-btn">View Details | বিস্তারিত দেখুন</button>
+      </div>
+    </div>
+
+    <div class="pkg-card" data-category="city" data-price="849" data-rating="4.6">
+      <div class="pkg-img-wrap">
+        <img src="https://picsum.photos/id/1035/500/350" alt="Istanbul">
+        <div class="pkg-price">$849</div>
+        <div class="pkg-duration">7 Days</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top">
+          <div><h3>Istanbul, Turkey</h3><h4>ইস্তানবুল, তুরস্ক</h4></div>
+          <span class="rating">★ 4.6</span>
+        </div>
+        <p class="pkg-desc">Where East meets West — historic mosques and the Bosphorus.</p>
+        <p class="pkg-desc bn">প্রাচ্য ও পাশ্চাত্যের মিলনস্থল — ঐতিহাসিক মসজিদ।</p>
+        <button class="view-btn">View Details | বিস্তারিত দেখুন</button>
+      </div>
+    </div>
+
+    <div class="pkg-card" data-category="mountain" data-price="729" data-rating="4.7">
+      <div class="pkg-img-wrap">
+        <img src="https://picsum.photos/id/1036/500/350" alt="Kashmir">
+        <div class="pkg-price">$729</div>
+        <div class="pkg-duration">6 Days</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top">
+          <div><h3>Kashmir, India</h3><h4>কাশ্মীর, ভারত</h4></div>
+          <span class="rating">★ 4.7</span>
+        </div>
+        <p class="pkg-desc">Heaven on earth — Dal Lake, houseboats and snowy valleys.</p>
+        <p class="pkg-desc bn">পৃথিবীর স্বর্গ — ডাল লেক ও তুষারাবৃত উপত্যকা।</p>
+        <button class="view-btn">View Details | বিস্তারিত দেখুন</button>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ================= PAGINATION ================= -->
+<div class="pagination">
+  <button class="page-btn">&#8592;</button>
+  <button class="page-btn active">1</button>
+  <button class="page-btn">2</button>
+  <button class="page-btn">3</button>
+  <button class="page-btn ellipsis">...</button>
+  <button class="page-btn">8</button>
+  <button class="page-btn">&#8594;</button>
+</div>
+
+<!-- ================= CONTACT SECTION ================= -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <span class="section-tag">📞 GET IN TOUCH</span>
+      <h2>Contact Us<br><span class="bn-sub">আমাদের সাথে যোগাযোগ করুন</span></h2>
+      <p>Have questions about a package? Our travel experts are here to help you plan your perfect journey.</p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <span class="ci-icon">📍</span>
+          <div><strong>Address</strong><p>Banani Super Market, Dhaka, Bangladesh</p></div>
+        </div>
+        <div class="contact-item">
+          <span class="ci-icon">📞</span>
+          <div><strong>Phone</strong><p>+880 1712-345678</p></div>
+        </div>
+        <div class="contact-item">
+          <span class="ci-icon">✉️</span>
+          <div><strong>Email</strong><p>info@nusratinternational.com</p></div>
+        </div>
+        <div class="contact-item">
+          <span class="ci-icon">🕐</span>
+          <div><strong>Hours</strong><p>Sat–Thu: 9AM – 9PM</p></div>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <h3>Send a Message | বার্তা পাঠান</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Your full name" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+880 XXXXXXXXX" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="your@email.com" required>
+      </div>
+      <div class="form-group">
+        <label>Package Interest</label>
+        <select>
+          <option value="">Select package type...</option>
+          <option>Travel Package | ট্র্যাভেল প্যাকেজ</option>
+          <option>Hajj Package | হজ প্যাকেজ</option>
+          <option>Work Package | ওয়ার্ক প্যাকেজ</option>
+          <option>Umrah Package | উমরাহ প্যাকেজ</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Your Message</label>
+        <textarea rows="4" placeholder="Tell us about your travel plans..." required></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Send Message | বার্তা পাঠান ✈</button>
+      <div class="form-success" id="formSuccess">✅ Message sent! We'll contact you shortly.</div>
+    </form>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo" style="margin-bottom:12px;">
+        <a href="index.html" style="display:flex;align-items:center;gap:10px;">
+          <img src="https://image2url.com/r2/default/images/1771964863151-2518979a-0fe0-4990-9a1a-9175b88e5ac8.jpg"
+               alt="Logo" style="height:36px;width:36px;border-radius:8px;object-fit:cover;"
+               onerror="this.style.display='none'">
+          <span style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:white;">Nusrat International</span>
+        </a>
+      </div>
+      <p>Your trusted partner for travel, Hajj, Umrah & international work opportunities. Serving Bangladesh since 2010.</p>
+      <div class="social-links">
+        <a href="#">FB</a>
+        <a href="#">YT</a>
+        <a href="#">IG</a>
+        <a href="#">WA</a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Services</h4>
+      <a href="#">Travel Packages</a>
+      <a href="#">Hajj Packages</a>
+      <a href="#">Umrah Packages</a>
+      <a href="#">Work Visas</a>
+    </div>
+    <div class="footer-links">
+      <h4>Company</h4>
+      <a href="#">About Us</a>
+      <a href="#">Our Team</a>
+      <a href="#">Testimonials</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer-links">
+      <h4>Our Location</h4>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.7194346099836!2d90.4049653103119!3d23.79300323072133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c70e90bb671d%3A0x7eab77d0896252c0!2sBanani%20Super%20Market!5e0!3m2!1sen!2sbd!4v1771968108612!5m2!1sen!2sbd"
+        width="100%" height="200"
+        style="border:0;border-radius:12px;display:block;"
+        allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Nusrat International Bangladesh. All rights reserved. | সর্বস্বত্ব সংরক্ষিত।</p>
+  </div>
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+
+// ---- NAVBAR scroll effect ----
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ---- HAMBURGER MENU (top dropdown) ----
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+const navItems = navLinks.querySelectorAll('li');
+
+function openMenu() {
+  hamburger.classList.add('open');
+  navLinks.classList.add('open');
+  document.body.classList.add('menu-open');
+  // Stagger each item sliding down
+  navItems.forEach((item, i) => {
+    item.style.transitionDelay = `${0.06 + i * 0.07}s`;
+    // tiny delay to let the overlay start first
+    setTimeout(() => item.classList.add('revealed'), 20);
+  });
+}
+
+function closeMenu() {
+  hamburger.classList.remove('open');
+  navLinks.classList.remove('open');
+  document.body.classList.remove('menu-open');
+  navItems.forEach(item => {
+    item.classList.remove('revealed');
+    item.style.transitionDelay = '0s';
+  });
+}
+
+hamburger.addEventListener('click', (e) => {
+  e.stopPropagation();
+  hamburger.classList.contains('open') ? closeMenu() : openMenu();
+});
+
+// Close when a nav link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', closeMenu);
+});
+
+// Close when clicking outside
+document.addEventListener('click', (e) => {
+  if (navLinks.classList.contains('open') &&
+      !navLinks.contains(e.target) &&
+      !hamburger.contains(e.target)) {
+    closeMenu();
+  }
+});
+
+
+// ---- FILTER ----
+function filterCards(btn, category) {
+  // Toggle active button
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const cards = document.querySelectorAll('#packagesGrid .pkg-card');
+  let visible = 0;
+
+  cards.forEach(card => {
+    const cats = card.dataset.category || '';
+    const show = category === 'all' || cats.includes(category);
+    card.style.display = show ? '' : 'none';
+    if (show) visible++;
+  });
+
+  document.getElementById('resultsCount').textContent = visible + ' packages';
+}
+
+// ---- SORT ----
+function sortCards(select) {
+  const grid = document.getElementById('packagesGrid');
+  const cards = Array.from(grid.querySelectorAll('.pkg-card'));
+
+  cards.sort((a, b) => {
+    const pa = parseFloat(a.dataset.price);
+    const pb = parseFloat(b.dataset.price);
+    const ra = parseFloat(a.dataset.rating);
+    const rb = parseFloat(b.dataset.rating);
+
+    if (select.value === 'price-low')  return pa - pb;
+    if (select.value === 'price-high') return pb - pa;
+    if (select.value === 'rating')     return rb - ra;
+    return 0;
+  });
+
+  cards.forEach(c => grid.appendChild(c));
+}
+
+// ---- CONTACT FORM ----
+function handleSubmit(e) {
+  e.preventDefault();
+  const success = document.getElementById('formSuccess');
+  success.style.display = 'block';
+  e.target.reset();
+  setTimeout(() => { success.style.display = 'none'; }, 5000);
+}
+</script>
+</body>
+</html>
