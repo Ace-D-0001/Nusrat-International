@@ -1,0 +1,1985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravelX — Explore The World</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<style>
+  /* ===========================
+    About_us.css
+    Editorial Luxury Theme
+    Deep Navy × Warm Gold
+    =========================== */
+
+  :root {
+    --navy:     #0c1628;
+    --navy-mid: #162040;
+    --navy-lit: #1e2d52;
+    --gold:     #c9a227;
+    --gold-lit: #f0c040;
+    --gold-pale:#fef9ee;
+    --cream:    #faf8f4;
+    --text:     #1a1f2e;
+    --muted:    #6b7280;
+    --white:    #ffffff;
+    --transition: 0.35s ease;
+  }
+
+  /* ===========================
+    HERO SECTION
+    =========================== */
+  .about-hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 120px 60px 80px;
+  }
+
+  /* Geometric background shapes */
+  .about-hero-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .hero-geo {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.06;
+  }
+
+  .geo-1 {
+    width: 700px; height: 700px;
+    background: var(--gold);
+    top: -200px; right: -200px;
+    animation: geoFloat 10s ease-in-out infinite alternate;
+  }
+
+  .geo-2 {
+    width: 400px; height: 400px;
+    background: #3b6cf4;
+    bottom: -100px; left: 10%;
+    animation: geoFloat 14s ease-in-out infinite alternate-reverse;
+  }
+
+  .geo-3 {
+    width: 200px; height: 200px;
+    border: 2px solid var(--gold);
+    top: 40%; left: 45%;
+    background: transparent;
+    opacity: 0.08;
+    animation: geoFloat 8s ease-in-out infinite;
+  }
+
+  @keyframes geoFloat {
+    from { transform: translate(0, 0) rotate(0deg); }
+    to   { transform: translate(30px, 20px) rotate(15deg); }
+  }
+
+  .about-hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Text side */
+  .eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 22px;
+  }
+
+  .about-hero-text h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(38px, 5vw, 68px);
+    font-weight: 900;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+
+  .about-hero-text h1 em {
+    font-style: italic;
+    color: var(--gold-lit);
+  }
+
+  .about-hero-text p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.9;
+    max-width: 480px;
+    margin-bottom: 36px;
+  }
+
+  .hero-cta-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn-about-primary {
+    padding: 14px 32px;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 50px;
+    transition: var(--transition);
+    letter-spacing: 0.3px;
+  }
+  .btn-about-primary:hover {
+    background: var(--gold-lit);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(201,162,39,0.4);
+  }
+
+  .btn-about-ghost {
+    padding: 14px 32px;
+    background: transparent;
+    color: rgba(255,255,255,0.8);
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 50px;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    transition: var(--transition);
+  }
+  .btn-about-ghost:hover {
+    border-color: white;
+    color: white;
+    transform: translateY(-3px);
+  }
+
+  /* Credential stack visual */
+  .credential-stack {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .cred-card {
+    position: absolute;
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 18px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    width: 200px;
+    animation: credFloat 0.7s ease both;
+  }
+
+  .cred-card[data-delay="0"] { animation-delay: 0.1s; }
+  .cred-card[data-delay="1"] { animation-delay: 0.25s; }
+  .cred-card[data-delay="2"] { animation-delay: 0.4s; }
+  .cred-card[data-delay="3"] { animation-delay: 0.55s; }
+
+  @keyframes credFloat {
+    from { opacity:0; transform: translateY(20px); }
+    to   { opacity:1; transform: translateY(0); }
+  }
+
+  .cred-card.top-left    { top: 2%;  left: 0; }
+  .cred-card.top-right   { top: 2%;  right: 0; }
+  .cred-card.bottom-left { bottom: 2%; left: 0; }
+  .cred-card.bottom-right{ bottom: 2%; right: 0; }
+
+  .cred-icon {
+    font-size: 26px;
+    flex-shrink: 0;
+  }
+
+  .cred-card strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 3px;
+  }
+
+  .cred-card small {
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.5;
+  }
+
+  .cred-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: var(--gold);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    box-shadow: 0 0 0 8px rgba(201,162,39,0.15), 0 0 0 16px rgba(201,162,39,0.07);
+    z-index: 2;
+  }
+
+  .cred-center img {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255,255,255,0.4);
+  }
+
+  .cred-center span {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 1px;
+  }
+
+  /* ===========================
+    STATS STRIP
+    =========================== */
+  .about-stats {
+    background: var(--gold);
+    padding: 36px 60px;
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+
+  .about-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 60px;
+    border-right: 1px solid rgba(12,22,40,0.2);
+    text-align: center;
+  }
+  .about-stat:last-child { border-right: none; }
+
+  .as-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1;
+  }
+  .as-plus {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--navy);
+    opacity: 0.7;
+    margin-left: 2px;
+    vertical-align: super;
+  }
+  .as-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(12,22,40,0.65);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 6px;
+  }
+
+  /* ===========================
+    STORY SECTION
+    =========================== */
+  .story-section {
+    background: var(--cream);
+    padding: 100px 60px;
+  }
+
+  .story-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .section-side-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    padding-top: 4px;
+  }
+
+  .story-line {
+    width: 1px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    height: 120px;
+    margin: 12px auto 0;
+  }
+
+  .story-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3.5vw, 46px);
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+
+  .story-content h2 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .story-lead {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .story-content p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.9;
+    margin-bottom: 16px;
+  }
+
+  .story-content strong {
+    color: var(--navy);
+  }
+
+  .story-quote {
+    margin-top: 36px;
+    padding: 28px 32px;
+    background: white;
+    border-left: 4px solid var(--gold);
+    border-radius: 0 16px 16px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+
+  .story-quote blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--navy);
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  .story-quote cite {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.5px;
+  }
+
+  /* ===========================
+    DIVISIONS
+    =========================== */
+  .divisions-section {
+    background: var(--navy);
+    padding: 100px 60px;
+  }
+
+  .divisions-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .division-heading {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .eyebrow-center {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .division-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3.5vw, 46px);
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+  }
+
+  .division-heading h2 em {
+    font-style: italic;
+    color: var(--gold-lit);
+  }
+
+  .divisions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  .division-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 24px;
+    padding: 40px 36px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .division-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    border-radius: 24px 24px 0 0;
+  }
+
+  .division-card.manpower::before { background: var(--gold); }
+  .division-card.travel::before   { background: #3b6cf4; }
+
+  .division-card:hover {
+    background: rgba(255,255,255,0.07);
+    transform: translateY(-6px);
+    box-shadow: 0 24px 50px rgba(0,0,0,0.3);
+  }
+
+  .div-icon-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .div-icon { font-size: 36px; }
+
+  .div-badge {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    background: rgba(201,162,39,0.15);
+    color: var(--gold-lit);
+    border: 1px solid rgba(201,162,39,0.25);
+  }
+
+  .div-badge.iata {
+    background: rgba(59,108,244,0.15);
+    color: #7ca4ff;
+    border-color: rgba(59,108,244,0.25);
+  }
+
+  .division-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 6px;
+  }
+
+  .div-tagline {
+    font-size: 13px;
+    color: var(--gold);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+  }
+
+  .travel .div-tagline { color: #7ca4ff; }
+
+  .division-card p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .div-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .div-features li {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    padding-left: 4px;
+  }
+
+  .div-btn {
+    display: inline-block;
+    padding: 12px 26px;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 13px;
+    border-radius: 50px;
+    transition: var(--transition);
+  }
+  .div-btn:hover {
+    background: var(--gold-lit);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(201,162,39,0.3);
+  }
+
+  .div-btn.travel-btn {
+    background: #3b6cf4;
+    color: white;
+  }
+  .div-btn.travel-btn:hover {
+    background: #2f5ce8;
+    box-shadow: 0 8px 20px rgba(59,108,244,0.35);
+  }
+
+  /* ===========================
+    LEADERSHIP
+    =========================== */
+  .leadership-section {
+    background: var(--cream);
+    padding: 100px 60px;
+  }
+
+  .leadership-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .leader-photo-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .leader-photo-bg {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy), var(--navy-lit));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 8px var(--gold-pale), 0 0 0 12px rgba(201,162,39,0.2);
+    margin-bottom: 20px;
+  }
+
+  .leader-initials {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 900;
+    color: var(--gold);
+    letter-spacing: 2px;
+  }
+
+  .leader-name-plate {
+    text-align: center;
+    padding: 16px 24px;
+    background: var(--navy);
+    border-radius: 14px;
+    width: 100%;
+  }
+
+  .leader-name-plate strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 4px;
+  }
+
+  .leader-name-plate span {
+    font-size: 12px;
+    color: var(--gold);
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  .leader-credentials {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .lc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    background: white;
+    padding: 10px 16px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  .lc-item span { font-size: 18px; }
+
+  /* Leadership text */
+  .leadership-text .section-side-tag {
+    writing-mode: horizontal-tb;
+    transform: none;
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .leadership-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 3vw, 42px);
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+
+  .leadership-text h2 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .leader-lead {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.8;
+    margin-bottom: 18px;
+  }
+
+  .leadership-text p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.9;
+    margin-bottom: 16px;
+  }
+
+  .leader-quote {
+    margin-top: 30px;
+    padding: 24px 28px;
+    background: linear-gradient(135deg, var(--navy), var(--navy-lit));
+    border-radius: 18px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .lq-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    color: var(--gold);
+    line-height: 0.6;
+    flex-shrink: 0;
+    opacity: 0.6;
+  }
+
+  .leader-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-style: italic;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* ===========================
+    CREDENTIALS BANNER
+    =========================== */
+  .creds-banner {
+    background: var(--navy-mid);
+    padding: 90px 60px;
+  }
+
+  .creds-banner-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .eyebrow-center.light { color: rgba(201,162,39,0.7); }
+
+  .creds-banner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3.5vw, 46px);
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 56px;
+  }
+
+  .creds-banner h2 em { font-style:italic; color: var(--gold-lit); }
+
+  .creds-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: left;
+  }
+
+  .cred-item {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    padding: 28px 24px;
+    transition: var(--transition);
+  }
+
+  .cred-item:hover {
+    background: rgba(255,255,255,0.08);
+    transform: translateY(-5px);
+    border-color: rgba(201,162,39,0.3);
+  }
+
+  .cred-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--gold);
+    background: rgba(201,162,39,0.1);
+    border: 1px solid rgba(201,162,39,0.2);
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+  }
+  .cred-logo.iata { color: #7ca4ff; background: rgba(59,108,244,0.1); border-color: rgba(59,108,244,0.2); }
+  .cred-logo.atab { color: #6ee7b7; background: rgba(13,159,110,0.1); border-color: rgba(13,159,110,0.2); }
+  .cred-logo.govt { color: #fca5a5; background: rgba(220,38,38,0.1); border-color: rgba(220,38,38,0.15); }
+
+  .cred-item h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  .cred-item p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.7;
+  }
+
+  /* ===========================
+    TIMELINE
+    =========================== */
+  .timeline-section {
+    background: var(--cream);
+    padding: 100px 60px;
+  }
+
+  .timeline-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .timeline-header {
+    text-align: center;
+    margin-bottom: 70px;
+  }
+
+  .timeline-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+
+  .timeline-header h2 em { font-style:italic; color:var(--gold); }
+
+  .timeline {
+    position: relative;
+    padding: 0;
+  }
+
+  /* Center spine */
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gold), rgba(201,162,39,0.1));
+    transform: translateX(-50%);
+  }
+
+  .tl-item {
+    position: relative;
+    width: 45%;
+    margin-bottom: 48px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .tl-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .tl-item.left  { margin-left: 0; margin-right: auto; padding-right: 40px; }
+  .tl-item.right { margin-left: auto; margin-right: 0; padding-left: 40px; }
+
+  .tl-dot {
+    position: absolute;
+    width: 16px; height: 16px;
+    background: var(--gold);
+    border-radius: 50%;
+    top: 20px;
+    box-shadow: 0 0 0 4px rgba(201,162,39,0.2);
+    z-index: 2;
+  }
+
+  .tl-item.left  .tl-dot { right: -8px; }
+  .tl-item.right .tl-dot { left: -8px; }
+
+  .tl-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px 26px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    transition: var(--transition);
+  }
+
+  .tl-card:hover {
+    box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+    transform: translateY(-3px);
+  }
+
+  .tl-year {
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gold);
+    background: var(--gold-pale);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+
+  .tl-card h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  .tl-card p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ===========================
+    RESPONSIVE
+    =========================== */
+
+  @media (max-width: 1100px) {
+    .about-hero-inner { grid-template-columns: 1fr; gap: 50px; }
+    .about-hero { min-height: auto; padding: 120px 40px 70px; }
+    .credential-stack { max-width: 380px; }
+    .leadership-inner { grid-template-columns: 1fr; gap: 40px; }
+    .leadership-visual { display: flex; flex-direction: row; gap: 30px; align-items: flex-start; flex-wrap: wrap; }
+    .leader-photo-frame { flex: 0 0 auto; }
+    .leader-credentials { flex: 1; min-width: 220px; }
+    .creds-grid { grid-template-columns: 1fr 1fr; }
+    .divisions-grid { grid-template-columns: 1fr; }
+    .story-inner { grid-template-columns: 80px 1fr; }
+  }
+
+  @media (max-width: 768px) {
+    .about-hero { padding: 100px 20px 60px; }
+    .story-section, .leadership-section, .timeline-section, .creds-banner, .divisions-section { padding: 60px 20px; }
+    .about-stats { padding: 20px; gap: 0; }
+    .about-stat { padding: 14px 20px; border-right: none; border-bottom: 1px solid rgba(12,22,40,0.15); width: 50%; }
+    .about-stat:nth-child(odd) { border-right: 1px solid rgba(12,22,40,0.15); }
+    .about-stat:last-child, .about-stat:nth-last-child(2):nth-child(odd) { border-bottom: none; }
+    .story-inner { grid-template-columns: 1fr; }
+    .section-side-tag { writing-mode: horizontal-tb; transform: none; }
+    .story-line { display: none; }
+    .creds-grid { grid-template-columns: 1fr; }
+    .timeline::before { left: 24px; }
+    .tl-item { width: 100%; padding-left: 56px; padding-right: 0; }
+    .tl-item.right { margin-left: 0; padding-left: 56px; }
+    .tl-item.left .tl-dot { right: auto; left: 16px; }
+    .tl-item.right .tl-dot { left: 16px; }
+    .cred-card { width: 150px; padding: 12px 14px; }
+    .cred-card strong { font-size: 11px; }
+  }
+
+  @media (max-width: 480px) {
+    .leadership-visual { flex-direction: column; }
+    .cred-card.top-right, .cred-card.bottom-right { display: none; }
+    .credential-stack { aspect-ratio: auto; height: 320px; }
+  }
+  /* ===========================
+   common.css — Global Base
+   =========================== */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #1a56db;
+  --blue-dark: #1140a6;
+  --gold: #c9a227;
+  --gold-dark: #a07b0e;
+  --green: #0d9f6e;
+  --green-dark: #077a53;
+  --dark: #0d1117;
+  --text: #1a1f2e;
+  --text-muted: #6b7280;
+  --bg: #f5f7fa;
+  --white: #ffffff;
+  --radius: 16px;
+  --shadow: 0 8px 30px rgba(0,0,0,0.10);
+  --shadow-hover: 0 20px 50px rgba(0,0,0,0.18);
+  --transition: 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: white;
+  
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===========================
+   NAVBAR
+   =========================== */
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: var(--transition);
+  background: transparent;
+  padding: 0;
+}
+
+#navbar.scrolled {
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  backdrop-filter: blur(10px);
+}
+
+#navbar.scrolled .logo,
+#navbar.scrolled .nav-links a {
+  color: var(--text);
+}
+
+#navbar.scrolled .logo span {
+  color: var(--gold);
+}
+
+#navbar.scrolled .nav-links a:hover {
+  color: var(--blue);
+}
+
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 18px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* ---- NAVBAR Logo with image ---- */
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo a img {
+  height: 42px;
+  width: 42px;
+  
+  object-fit: cover;
+}
+
+.logo a span {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 0.01em;
+  transition: var(--transition);
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: white;
+  border-bottom-color: #f8c640;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 1100;
+  position: relative;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+#navbar.scrolled .hamburger span {
+  background: var(--text);
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ===========================
+   FOOTER
+   =========================== */
+
+footer {
+  background: var(--dark);
+  color: #9ca3af;
+  padding: 60px 0 0;
+  margin-top: 0;
+}
+
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px 50px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 50px;
+}
+
+.footer-brand .logo {
+  color: white;
+  margin-bottom: 16px;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 280px;
+  color: #6b7280;
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.social-links a {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #9ca3af;
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: white;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  font-size: 14px;
+  color: #6b7280;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: white;
+  padding-left: 6px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #1f2937;
+  text-align: center;
+  padding: 20px 40px;
+  font-size: 13px;
+  color: #4b5563;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media (max-width: 1024px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: flex;
+    position: relative;
+    z-index: 1200; /* always on top */
+  }
+
+  .nav-inner {
+    padding: 16px 20px;
+  }
+
+  /* ---- TOP DROPDOWN MENU ---- */
+  .nav-links {
+    /* Positioned just below the navbar, slides down from top */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    /* Clean white background — no dark confusion */
+    background: #ffffff;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    padding-top: 68px; /* height of navbar bar */
+    padding-bottom: 12px;
+
+    /* Hidden: clipped above viewport */
+    transform: translateY(-100%);
+    transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Keep links tappable only when open */
+    visibility: hidden;
+
+    z-index: 1100;
+    overflow: hidden;
+  }
+
+  .nav-links.open {
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  /* Individual list items — stagger in from above */
+  .nav-links li {
+    width: 100%;
+    border-bottom: 1px solid #f0f0f0;
+    opacity: 0;
+    transform: translateY(-12px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .nav-links li:first-child {
+    border-top: 1px solid #f0f0f0;
+  }
+
+  /* JS adds .revealed to trigger each item */
+  .nav-links li.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 16px 28px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text); /* dark text on white — readable */
+    border-bottom: none;
+    letter-spacing: 0.01em;
+    transition: color 0.2s ease, background 0.2s ease, padding-left 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--blue);
+    background: #f0f5ff;
+    padding-left: 38px;
+    border-bottom: none;
+  }
+
+  .nav-links a.active {
+    color: var(--blue);
+    font-weight: 600;
+    border-bottom: none;
+    background: #f0f5ff;
+  }
+
+  /* Lock body scroll when menu open */
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  /* Hamburger icon turns dark when menu is open (white bg behind it) */
+  .hamburger.open span {
+    background: var(--text);
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+</style>
+<body>
+
+<!-- ================= HEADER ================= -->
+<nav id="navbar">
+  <div class="nav-inner">
+
+    <div class="logo">
+      <a href="index.html">
+        <img src="https://image2url.com/r2/default/images/1771964863151-2518979a-0fe0-4990-9a1a-9175b88e5ac8.jpg"
+             alt="Nusrat International Logo"
+             onerror="this.style.display='none'">
+        <span>Nusrat International</span>
+      </a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active">Home | হোম</a></li>
+      <li><a href="Travel.html" >Travel | ভ্রমণ</a></li>
+      <li><a href="Hajj.html">Hajj | হাজ্জ</a></li>
+      <li><a href="Work.html">Work | কাজ</a></li>
+      <li><a href="Contact.html">Contact | যোগাযোগ</a></li>
+      <li><a href="About_us.html">About | আমাদের সম্পর্কে</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     HERO
+═══════════════════════════════════════ -->
+<section class="au-hero">
+  <!-- background texture layer -->
+  <div class="au-hero-bg"></div>
+
+  <div class="au-hero-inner">
+
+    <!-- Left: text -->
+    <div class="au-hero-text">
+      <p class="au-eyebrow"><span class="eyebrow-rule"></span>About Nusrat International</p>
+      <h1>Over 15 Years of<br><em>Trust &amp; Excellence</em><br>in Bangladesh</h1>
+      <p class="au-hero-sub">A government-approved travel and manpower agency — BAIRA, ATAB &amp; IATA certified — serving thousands of clients since 2010 from our Banani office in Dhaka.</p>
+      <div class="au-hero-actions">
+        <a href="#divisions" class="au-btn-primary">Our Services</a>
+        <a href="#contact"   class="au-btn-outline">Contact Us</a>
+      </div>
+    </div>
+
+    <!-- Right: formal info card -->
+    <div class="au-info-card">
+      <div class="aic-header">
+        <img class="aic-logo"
+             src="https://image2url.com/r2/default/images/1771964863151-2518979a-0fe0-4990-9a1a-9175b88e5ac8.jpg"
+             alt="Logo" onerror="this.style.display='none'">
+        <div>
+          <h3>Nusrat International</h3>
+          <p>Government Approved Recruiting Agency</p>
+        </div>
+      </div>
+
+      <table class="aic-table">
+        <tr>
+          <td class="aic-label">Proprietor</td>
+          <td class="aic-val">Alhaj Mohammad Zakir Hossain</td>
+        </tr>
+        <tr>
+          <td class="aic-label">Licence No.</td>
+          <td class="aic-val">RL-1429</td>
+        </tr>
+        <tr>
+          <td class="aic-label">Established</td>
+          <td class="aic-val">2010, Dhaka, Bangladesh</td>
+        </tr>
+        <tr>
+          <td class="aic-label">Address</td>
+          <td class="aic-val">House #05, 2nd Floor, Road #17, Block E<br>Banani C/A, Dhaka-1213</td>
+        </tr>
+        <tr>
+          <td class="aic-label">Telephone</td>
+          <td class="aic-val">+88-02-222274337 &nbsp;·&nbsp; +88-02-226603155</td>
+        </tr>
+        <tr>
+          <td class="aic-label">Mobile</td>
+          <td class="aic-val">01713-165116 &nbsp;·&nbsp; 01831-350583 &nbsp;·&nbsp; 01715-347859</td>
+        </tr>
+      </table>
+
+      <div class="aic-badges">
+        <span class="aic-badge">BAIRA</span>
+        <span class="aic-badge">ATAB</span>
+        <span class="aic-badge">IATA</span>
+        <span class="aic-badge">Govt. Approved</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     STATS STRIP
+═══════════════════════════════════════ -->
+<div class="au-stats-bar">
+  <div class="au-stat">
+    <span class="aus-num" data-target="15">0</span><span class="aus-sfx">+</span>
+    <span class="aus-label">Years in Business</span>
+  </div>
+  <div class="au-stat">
+    <span class="aus-num" data-target="10000">0</span><span class="aus-sfx">+</span>
+    <span class="aus-label">Clients Served</span>
+  </div>
+  <div class="au-stat">
+    <span class="aus-num" data-target="5000">0</span><span class="aus-sfx">+</span>
+    <span class="aus-label">Workers Placed Abroad</span>
+  </div>
+  <div class="au-stat">
+    <span class="aus-num" data-target="98">0</span><span class="aus-sfx">%</span>
+    <span class="aus-label">Visa Success Rate</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     ABOUT / STORY
+═══════════════════════════════════════ -->
+<section class="au-story" id="story">
+  <div class="au-section-inner">
+
+    <div class="au-story-text">
+      <p class="au-eyebrow"><span class="eyebrow-rule"></span>Our Story</p>
+      <h2>A Legacy Built on<br><em>Integrity &amp; Service</em></h2>
+
+      <p class="au-lead">Nusrat International was founded with a singular purpose — to provide Bangladeshi families with safe, legal, and dignified pathways to opportunity abroad.</p>
+
+      <p>What began as a focused travel agency in the commercial heart of Banani, Dhaka has grown into one of Bangladesh's most trusted names across two critical sectors: international manpower recruitment and full-service travel solutions. Through more than 15 years of steady operation, the organization has maintained an unwavering commitment to ethical practice, regulatory compliance, and genuine care for every client.</p>
+
+      <p>Under the proprietorship of <strong>Alhaj Mohammad Zakir Hossain</strong>, Nusrat International holds a Government Recruiting Licence (RL-1429) and is a registered member of BAIRA — ensuring all overseas placements are conducted under the full protection of Bangladesh's national labour migration framework.</p>
+
+      <p>Its sister concern, <strong>Nusrat Travels</strong>, operates as a Government Approved Travel Agency, holding both ATAB membership and IATA accreditation — authorizing direct airline ticket issuance for all major international carriers, a credential that reflects a high standard of professional trust and financial standing within the industry.</p>
+
+      <blockquote class="au-blockquote">
+        "Our mission has always been simple: to serve our clients as if they were our own family — with honesty, care, and full accountability."
+        <cite>— Alhaj Mohammad Zakir Hossain, Proprietor</cite>
+      </blockquote>
+    </div>
+
+    <div class="au-story-aside">
+      <!-- Company overview card -->
+      <div class="au-aside-card">
+        <h4 class="au-aside-title">Company Overview</h4>
+        <dl class="au-dl">
+          <dt>Legal Name</dt>
+          <dd>Nusrat International</dd>
+          <dt>Sister Concern</dt>
+          <dd>Nusrat Travels</dd>
+          <dt>Type</dt>
+          <dd>Proprietorship</dd>
+          <dt>Industry</dt>
+          <dd>Manpower Recruitment &amp; Travel Services</dd>
+          <dt>Founded</dt>
+          <dd>2010</dd>
+          <dt>Headquarters</dt>
+          <dd>Banani, Dhaka-1213, Bangladesh</dd>
+          <dt>Govt. Licence</dt>
+          <dd>RL-1429</dd>
+        </dl>
+      </div>
+
+      <!-- Values card -->
+      <div class="au-aside-card values-card">
+        <h4 class="au-aside-title">Our Core Values</h4>
+        <ul class="au-values">
+          <li>
+            <span class="av-num">01</span>
+            <div><strong>Legal Compliance</strong><p>Every service operates within the full framework of Bangladeshi and international law.</p></div>
+          </li>
+          <li>
+            <span class="av-num">02</span>
+            <div><strong>Transparency</strong><p>Clients receive clear, accurate information at every step — no hidden fees, no false promises.</p></div>
+          </li>
+          <li>
+            <span class="av-num">03</span>
+            <div><strong>Client Welfare</strong><p>We treat each client's livelihood and spiritual journey with the seriousness it deserves.</p></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     LEADERSHIP
+═══════════════════════════════════════ -->
+<section class="au-leadership" id="leadership">
+  <div class="au-section-inner">
+
+    <!-- Profile column -->
+    <div class="au-profile-col">
+      <div class="au-profile-card">
+        <div class="apc-photo-area">
+          <div class="apc-monogram">AZH</div>
+        </div>
+        <div class="apc-gold-bar"></div>
+        <div class="apc-info">
+          <h3>Alhaj Mohammad<br>Zakir Hossain</h3>
+          <span class="apc-role">Proprietor &amp; Founder</span>
+        </div>
+        <div class="apc-divider"></div>
+        <ul class="apc-cred-list">
+          <li><span class="apc-cred-dot gold"></span>Alhaj — Hajj Performed</li>
+          <li><span class="apc-cred-dot gold"></span>BAIRA Registered Member</li>
+          <li><span class="apc-cred-dot gold"></span>ATAB Registered Member</li>
+          <li><span class="apc-cred-dot gold"></span>IATA Accredited Agency</li>
+          <li><span class="apc-cred-dot gold"></span>Govt. Licence RL-1429</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Text column -->
+    <div class="au-leader-text">
+      <p class="au-eyebrow"><span class="eyebrow-rule"></span>Leadership</p>
+      <h2>The Founder Behind<br><em>The Organisation</em></h2>
+
+      <p class="au-lead">Alhaj Mohammad Zakir Hossain is the founder and sole proprietor of both Nusrat International and Nusrat Travels. A veteran of Bangladesh's travel and international recruitment industry, he has built both organisations on a foundation of regulatory compliance, professional integrity, and deep personal dedication.</p>
+
+      <p>His decision to pursue and actively maintain memberships in BAIRA, ATAB, and IATA accreditation reflects a belief — held from the organisation's very first day — that legitimacy and transparency are not optional attributes in a business that deals with people's livelihoods and spiritual aspirations.</p>
+
+      <p>Having performed Hajj himself, Alhaj Hossain brings a personal and deeply meaningful understanding to the Hajj and Umrah journeys his company facilitates each year for thousands of Bangladeshi pilgrims. This lived experience shapes the care and attention that defines every package Nusrat International offers.</p>
+
+      <div class="au-leader-quote">
+        <div class="alq-bar"></div>
+        <div class="alq-body">
+          <p>"Every client who walks through our door is someone's father, mother, child. We carry that responsibility with the utmost seriousness — and with gratitude for their trust."</p>
+          <cite>— Alhaj Mohammad Zakir Hossain</cite>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     TWO DIVISIONS
+═══════════════════════════════════════ -->
+<section class="au-divisions" id="divisions">
+  <div class="au-section-inner au-section-inner--narrow">
+
+    <div class="au-divisions-header">
+      <div>
+        <p class="au-eyebrow"><span class="eyebrow-rule"></span>Our Services</p>
+        <h2 class="light-h2">Two Specialist<br><em>Divisions</em></h2>
+      </div>
+      <p class="au-div-intro">Nusrat International operates two distinct but complementary divisions, each serving a specific and critical need for Bangladeshi clients seeking opportunities or journeys abroad.</p>
+    </div>
+
+    <div class="au-div-grid">
+
+      <!-- Division 1 -->
+      <div class="au-div-card au-div-card--manpower">
+        <div class="adv-tag">Manpower Recruitment</div>
+        <h3>Nusrat International</h3>
+        <p class="adv-licence">Government Approved · Licence No. RL-1429</p>
+        <p class="adv-desc">Specialising in the legal and ethical overseas recruitment of Bangladeshi workers — connecting skilled, semi-skilled, and unskilled workers with verified employers across the Middle East, Asia, and Europe.</p>
+        <ul class="adv-list">
+          <li>BAIRA Registered — full compliance with national labour migration standards</li>
+          <li>Complete visa documentation &amp; embassy coordination</li>
+          <li>Pre-departure orientation &amp; post-arrival employee welfare</li>
+          <li>Placement in Saudi Arabia, UAE, Qatar, Malaysia, Singapore, Europe &amp; more</li>
+          <li>Confirmed job offer letter provided before departure</li>
+        </ul>
+        <a href="Work.html" class="adv-cta">View Work Packages →</a>
+      </div>
+
+      <!-- Division 2 -->
+      <div class="au-div-card au-div-card--travel">
+        <div class="adv-tag adv-tag--blue">Travel &amp; Aviation</div>
+        <h3>Nusrat Travels</h3>
+        <p class="adv-licence">IATA Accredited · ATAB Member · Govt. Approved</p>
+        <p class="adv-desc">A full-service travel agency with IATA accreditation — authorising direct ticket issuance for all major international airlines — and active ATAB membership, ensuring all services meet the highest professional standards.</p>
+        <ul class="adv-list">
+          <li>IATA accreditation — direct airline ticketing for all carriers</li>
+          <li>Hajj &amp; Umrah packages with complete pilgrimage support</li>
+          <li>International leisure &amp; corporate travel packages</li>
+          <li>Visa assistance for all global destinations</li>
+          <li>Flight booking, hotel accommodation &amp; tour arrangements</li>
+        </ul>
+        <a href="Travel.html" class="adv-cta adv-cta--blue">View Travel Packages →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     CREDENTIALS TABLE
+═══════════════════════════════════════ -->
+<section class="au-creds" id="credentials">
+  <div class="au-section-inner">
+
+    <div class="au-creds-header">
+      <div>
+        <p class="au-eyebrow au-eyebrow--light"><span class="eyebrow-rule eyebrow-rule--gold"></span>Memberships &amp; Accreditations</p>
+        <h2 class="au-h2-white">Fully Regulated.<br><em>Internationally Recognised.</em></h2>
+      </div>
+      <p class="au-creds-note">All credentials are current and actively maintained. These affiliations are not formalities — they represent enforceable obligations to ethical and professional conduct.</p>
+    </div>
+
+    <div class="au-creds-table-wrap">
+      <table class="au-creds-table">
+        <thead>
+          <tr>
+            <th>Credential</th>
+            <th>Issuing Body</th>
+            <th>Scope</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="cred-name gold-cred">BAIRA Member</td>
+            <td>Bangladesh Association of International Recruiting Agencies</td>
+            <td>Overseas manpower recruitment — ethical compliance &amp; worker protection</td>
+            <td><span class="status-badge active">Active</span></td>
+          </tr>
+          <tr>
+            <td class="cred-name blue-cred">IATA Accredited</td>
+            <td>International Air Transport Association</td>
+            <td>Direct ticket issuance for all major international airlines</td>
+            <td><span class="status-badge active">Active</span></td>
+          </tr>
+          <tr>
+            <td class="cred-name green-cred">ATAB Member</td>
+            <td>Association of Travel Agents of Bangladesh</td>
+            <td>Travel agency operations — professional standards &amp; consumer protection</td>
+            <td><span class="status-badge active">Active</span></td>
+          </tr>
+          <tr>
+            <td class="cred-name amber-cred">Govt. Recruiting Licence</td>
+            <td>Government of Bangladesh</td>
+            <td>Licence No. RL-1429 — approved overseas recruiting agency</td>
+            <td><span class="status-badge active">Active</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     TIMELINE
+═══════════════════════════════════════ -->
+<section class="au-timeline" id="timeline">
+  <div class="au-section-inner">
+
+    <div class="au-tl-header">
+      <p class="au-eyebrow"><span class="eyebrow-rule"></span>Company History</p>
+      <h2>Key Milestones<br><em>Since 2010</em></h2>
+    </div>
+
+    <div class="au-tl-list">
+
+      <div class="au-tl-item reveal">
+        <div class="au-tl-year">2010</div>
+        <div class="au-tl-connector"><div class="au-tl-dot"></div></div>
+        <div class="au-tl-card">
+          <h4>Company Founded</h4>
+          <p>Nusrat International established at Banani C/A, Dhaka — beginning operations as a travel and manpower recruitment agency under the proprietorship of Alhaj Mohammad Zakir Hossain.</p>
+        </div>
+      </div>
+
+      <div class="au-tl-item reveal">
+        <div class="au-tl-year">2012</div>
+        <div class="au-tl-connector"><div class="au-tl-dot"></div></div>
+        <div class="au-tl-card">
+          <h4>BAIRA Registration</h4>
+          <p>Formally registered with the Bangladesh Association of International Recruiting Agencies (BAIRA), cementing the agency's commitment to ethical overseas employment under the national framework.</p>
+        </div>
+      </div>
+
+      <div class="au-tl-item reveal">
+        <div class="au-tl-year">2014</div>
+        <div class="au-tl-connector"><div class="au-tl-dot"></div></div>
+        <div class="au-tl-card">
+          <h4>IATA Accreditation</h4>
+          <p>Nusrat Travels received full IATA accreditation, authorising the direct issuance of international airline tickets — a milestone marking the agency's standing as a premier travel service provider in Bangladesh.</p>
+        </div>
+      </div>
+
+      <div class="au-tl-item reveal">
+        <div class="au-tl-year">2016</div>
+        <div class="au-tl-connector"><div class="au-tl-dot"></div></div>
+        <div class="au-tl-card">
+          <h4>Dedicated Hajj &amp; Umrah Division</h4>
+          <p>Launched structured Hajj and Umrah packages for Bangladeshi pilgrims, offering guided spiritual journeys with full visa processing, accommodation, and ground transportation.</p>
+        </div>
+      </div>
+
+      <div class="au-tl-item reveal">
+        <div class="au-tl-year">2020</div>
+        <div class="au-tl-connector"><div class="au-tl-dot"></div></div>
+        <div class="au-tl-card">
+          <h4>5,000 Overseas Placements</h4>
+          <p>Reached the milestone of 5,000 verified overseas job placements — workers deployed legally to the Middle East, Southeast Asia, and Europe under full BAIRA compliance.</p>
+        </div>
+      </div>
+
+      <div class="au-tl-item reveal">
+        <div class="au-tl-year">2026</div>
+        <div class="au-tl-connector"><div class="au-tl-dot"></div></div>
+        <div class="au-tl-card highlight">
+          <h4>Serving 10,000+ Clients</h4>
+          <p>Today, Nusrat International proudly serves over 10,000 clients across travel, Hajj, Umrah, and manpower services — with an unbroken record of legal compliance, client trust, and professional excellence.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     CONTACT
+═══════════════════════════════════════ -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <span class="section-tag">Get In Touch</span>
+      <h2>Contact Us<br><span class="bn-sub">আমাদের সাথে যোগাযোগ করুন</span></h2>
+      <p>We welcome enquiries regarding any of our services. Please visit our office or reach us by phone or message — our team is available Saturday through Thursday, 9AM to 9PM.</p>
+
+      <div class="contact-items">
+        <div class="contact-item">
+          <span class="ci-icon">📍</span>
+          <div>
+            <strong>Office Address</strong>
+            <p>House #05 (2nd Floor), Road #17, Block E<br>Banani C/A, Dhaka-1213, Bangladesh</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="ci-icon">☎</span>
+          <div>
+            <strong>Telephone</strong>
+            <p>+88-02-222274337<br>+88-02-226603155</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="ci-icon">📱</span>
+          <div>
+            <strong>Mobile / Cell</strong>
+            <p>01713-165116 &nbsp;|&nbsp; 01831-350583 &nbsp;|&nbsp; 01715-347859</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="ci-icon">🕐</span>
+          <div>
+            <strong>Office Hours</strong>
+            <p>Saturday – Thursday: 9:00 AM – 9:00 PM<br>Friday: Closed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <h3>Send an Enquiry | বার্তা পাঠান</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Your full name" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+880 XXXXXXXXX" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label>Service of Interest</label>
+        <select>
+          <option value="">Select a service...</option>
+          <option>Travel Package</option>
+          <option>Hajj Package</option>
+          <option>Umrah Package</option>
+          <option>Work / Manpower Recruitment</option>
+          <option>General Enquiry</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea rows="4" placeholder="How can we assist you?" required></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Send Message | বার্তা পাঠান</button>
+      <div class="form-success" id="formSuccess">✓ Your message has been sent. We will contact you shortly.</div>
+    </form>
+  </div>
+</section>
+
+
+
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">Nusrat International</div>
+      <p>Your trusted partner for travel, Hajj, Umrah & international work opportunities. Serving Bangladesh since 2010.</p>
+      <div class="social-links">
+        <a href="#">FB</a>
+        <a href="#">YT</a>
+        <a href="#">IG</a>
+        <a href="#">WA</a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Services</h4>
+      <a href="#">Travel Packages</a>
+      <a href="#">Hajj Packages</a>
+      <a href="#">Umrah Packages</a>
+      <a href="#">Work Visas</a>
+    </div>
+    <div class="footer-links">
+      <h4>Company</h4>
+      <a href="#">About Us</a>
+      <a href="#">Our Team</a>
+      <a href="#">Testimonials</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer-links">
+      <h4>Location</h4>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.7194346099836!2d90.4049653103119!3d23.79300323072133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c70e90bb671d%3A0x7eab77d0896252c0!2sBanani%20Super%20Market!5e0!3m2!1sen!2sbd!4v1771968108612!5m2!1sen!2sbd" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 TravelX Bangladesh. All rights reserved. | সর্বস্বত্ব সংরক্ষিত।</p>
+  </div>
+</footer>
+
+
+
+
+<!-- ═══════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════ -->
+<script>
+// ---- NAVBAR scroll effect ----
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ---- HAMBURGER MENU (top dropdown) ----
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+const navItems = navLinks.querySelectorAll('li');
+
+function openMenu() {
+  hamburger.classList.add('open');
+  navLinks.classList.add('open');
+  document.body.classList.add('menu-open');
+  // Stagger each item sliding down
+  navItems.forEach((item, i) => {
+    item.style.transitionDelay = `${0.06 + i * 0.07}s`;
+    // tiny delay to let the overlay start first
+    setTimeout(() => item.classList.add('revealed'), 20);
+  });
+}
+
+function closeMenu() {
+  hamburger.classList.remove('open');
+  navLinks.classList.remove('open');
+  document.body.classList.remove('menu-open');
+  navItems.forEach(item => {
+    item.classList.remove('revealed');
+    item.style.transitionDelay = '0s';
+  });
+}
+
+hamburger.addEventListener('click', (e) => {
+  e.stopPropagation();
+  hamburger.classList.contains('open') ? closeMenu() : openMenu();
+});
+
+// Close when a nav link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', closeMenu);
+});
+
+// Close when clicking outside
+document.addEventListener('click', (e) => {
+  if (navLinks.classList.contains('open') &&
+      !navLinks.contains(e.target) &&
+      !hamburger.contains(e.target)) {
+    closeMenu();
+  }
+});
+
+
+// ---- CONTACT FORM ----
+function handleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('formSuccess').style.display = 'block';
+  e.target.reset();
+  setTimeout(() => {
+    document.getElementById('formSuccess').style.display = 'none';
+  }, 5000);
+}
+/* — Animated counters — */
+function runCounters() {
+  document.querySelectorAll('.aus-num').forEach(el => {
+    const target = +el.dataset.target;
+    const dur = 1800, step = target / (dur / 16);
+    let cur = 0;
+    const t = setInterval(() => {
+      cur = Math.min(cur + step, target);
+      el.textContent = target >= 1000 ? Math.floor(cur).toLocaleString() : Math.floor(cur);
+      if (cur >= target) clearInterval(t);
+    }, 16);
+  });
+}
+const statsEl = document.querySelector('.au-stats-bar');
+if (statsEl) {
+  const io = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) { runCounters(); io.disconnect(); }
+  }, { threshold: 0.4 });
+  io.observe(statsEl);
+}
+
+/* — Timeline reveal — */
+const tlObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.15 });
+document.querySelectorAll('.au-tl-item.reveal').forEach(el => tlObs.observe(el));
+
+/* — Contact form — */
+function handleSubmit(e) {
+  e.preventDefault();
+  const s = document.getElementById('formSuccess');
+  s.style.display = 'block';
+  e.target.reset();
+  setTimeout(() => s.style.display = 'none', 6000);
+}
+</script>
+</body>
+</html>
