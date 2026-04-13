@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title><%= pageTitle || 'Contact — Nusrat International' %></title>
+  <title><%= pageTitle || 'Gallery — Nusrat International' %></title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <% cssFiles.forEach(file => { %>
@@ -41,103 +41,53 @@
   </div>
 </nav>
 
-<!-- PAGE HERO -->
-<section class="page-hero contact-hero">
-  <span class="section-tag">📞 GET IN TOUCH</span>
-  <h1>Contact Us<br><em>Today</em></h1>
-  <p>Have questions about our services? We're here to help you 24/7.<br>আমাদের সাথে যোগাযোগ করুন — আমরা সবসময় আপনার সেবায় প্রস্তুত।</p>
-</section>
+<div class="page-title">
+  <span class="ptag">📸 MEMORIES & MOMENTS</span>
+  <h1>Our <em>Gallery</em></h1>
+  <p>Capturing moments from journeys, pilgrimages, and celebrations with our valued clients.</p>
+</div>
 
-<!-- CONTACT SECTION -->
-<main class="container">
-  <section class="contact-section">
-    <div class="contact-grid">
-      <!-- Contact Info -->
-      <div class="contact-info">
-        <h2>Contact Information</h2>
-        
-        <div class="contact-item">
-          <h3>📞 Phone</h3>
-          <p><a href="tel:01713165116">017-1316-5116</a></p>
-          <p><a href="tel:01713165117">017-1316-5117</a></p>
+<!-- GALLERY GRID -->
+<div class="gallery-wrap">
+  <div class="gallery-grid">
+    <% if (typeof galleryItems !== 'undefined' && galleryItems.length > 0) { %>
+      <% galleryItems.forEach(item => { %>
+        <div class="gallery-item">
+          <img src="<%= item.image %>" alt="<%= item.title || 'Gallery Image' %>">
+          <% if (item.caption) { %>
+            <div class="gallery-caption"><%= item.caption %></div>
+          <% } %>
         </div>
-
-        <div class="contact-item">
-          <h3>💬 WhatsApp</h3>
-          <p><a href="https://wa.me/8801713165116" target="_blank" rel="noopener">+880 171 3165116</a></p>
-        </div>
-
-        <div class="contact-item">
-          <h3>📧 Email</h3>
-          <p><a href="mailto:info@nusratinternational.com">info@nusratinternational.com</a></p>
-        </div>
-
-        <div class="contact-item">
-          <h3>📍 Address</h3>
-          <p>Banani Super Market,<br>Banani, Dhaka 1213<br>Bangladesh</p>
-        </div>
-
-        <div class="contact-item">
-          <h3>⏰ Business Hours</h3>
-          <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 2:00 PM<br>Sunday: Closed</p>
-        </div>
+      <% }) %>
+    <% } else { %>
+      <!-- Default gallery items -->
+      <div class="gallery-item">
+        <img src="https://picsum.photos/600/400?1" alt="Hajj Group 2025">
+        <div class="gallery-caption">Hajj Group 2025</div>
       </div>
-
-      <!-- Contact Form -->
-      <div class="contact-form-wrap">
-        <h2>Send us a Message</h2>
-        <form class="contact-form" id="contactForm">
-          <div class="form-group">
-            <label for="name">Your Name *</label>
-            <input type="text" id="name" name="name" required placeholder="Full Name">
-          </div>
-
-          <div class="form-group">
-            <label for="email">Your Email *</label>
-            <input type="email" id="email" name="email" required placeholder="your@email.com">
-          </div>
-
-          <div class="form-group">
-            <label for="phone">Your Phone *</label>
-            <input type="tel" id="phone" name="phone" required placeholder="01700000000">
-          </div>
-
-          <div class="form-group">
-            <label for="service">Service Interest *</label>
-            <select id="service" name="service" required>
-              <option value="">Select a service</option>
-              <option value="travel">Travel Packages</option>
-              <option value="hajj">Hajj & Umrah</option>
-              <option value="work">Work Visa</option>
-              <option value="ticketing">Air Ticketing</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Your Message *</label>
-            <textarea id="message" name="message" required placeholder="Tell us how we can help..." rows="5"></textarea>
-          </div>
-
-          <button type="submit" class="btn-primary">Send Message</button>
-          <p class="form-note" id="formMessage"></p>
-        </form>
+      <div class="gallery-item">
+        <img src="https://picsum.photos/600/400?2" alt="Umrah Pilgrims">
+        <div class="gallery-caption">Umrah Pilgrims</div>
       </div>
-    </div>
-  </section>
-  
-  <!-- Map Section -->
-  <section class="map-section">
-    <h2 style="text-align: center; margin-bottom: 2rem;">Find Us on the Map</h2>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.7194346099836!2d90.4049653103119!3d23.79300323072133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c70e90bb671d%3A0x7eab77d0896252c0!2sBanani%20Super%20Market!5e0!3m2!1sen!2sbd!4v1771968108612!5m2!1sen!2sbd"
-      width="100%" height="400"
-      style="border:0;border-radius:12px;display:block;"
-      allowfullscreen="" loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </section>
-</main>
+      <div class="gallery-item">
+        <img src="https://picsum.photos/600/400?3" alt="Travel Team">
+        <div class="gallery-caption">Our Travel Team</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://picsum.photos/600/400?4" alt="Happy Clients">
+        <div class="gallery-caption">Happy Clients</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://picsum.photos/600/400?5" alt="Office Opening">
+        <div class="gallery-caption">Office Opening Ceremony</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://picsum.photos/600/400?6" alt="Award Ceremony">
+        <div class="gallery-caption">Award Ceremony 2024</div>
+      </div>
+    <% } %>
+  </div>
+</div>
 
 <footer>
   <div class="footer-inner">
@@ -171,28 +121,5 @@ document.addEventListener('click',e=>{if(navLinks.classList.contains('open')&&!n
 dropTrig.addEventListener('click',function(e){if(window.innerWidth<=768){e.preventDefault();e.stopPropagation();aboutDD.classList.toggle('mobile-open');this.setAttribute('aria-expanded',aboutDD.classList.contains('mobile-open'));}});
 </script>
 <script src="/js/common.js"></script>
-<script>
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  const formMessage = document.getElementById('formMessage');
-  const submitBtn = this.querySelector('button[type="submit"]');
-  
-  formMessage.textContent = 'Sending...';
-  formMessage.style.color = '#0d9f6e';
-  submitBtn.disabled = true;
-  
-  setTimeout(() => {
-    formMessage.textContent = 'Thank you! We will contact you soon.';
-    formMessage.style.color = '#0d9f6e';
-    this.reset();
-    submitBtn.disabled = false;
-    
-    setTimeout(() => {
-      formMessage.textContent = '';
-    }, 5000);
-  }, 1000);
-});
-</script>
 </body>
 </html>

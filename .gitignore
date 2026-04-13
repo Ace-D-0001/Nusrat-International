@@ -1,1 +1,53 @@
+```
+# Dependencies
 node_modules/
+
+# Editors
+.vscode/
+.idea/
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
+# Build artifacts
+dist/
+build/
+target/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.git*
+!CHANGELOG.md
+!CONTRIBUTING.md
+!LICENSE
+!README.md
+!requirements.txt
+!setup.py
+!tox.ini
+.DS_Store
+Thumbs.db
+```
